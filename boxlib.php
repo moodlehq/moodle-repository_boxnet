@@ -36,7 +36,7 @@ require_once($CFG->libdir . '/oauthlib.php');
  * @copyright  2013 Frédéric Massart
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class boxnet_client extends oauth2_client {
+class repository_boxnet_client extends oauth2_client {
 
     /** @const API URL */
     const API = 'https://api.box.com/2.0';
@@ -255,14 +255,4 @@ class boxnet_client extends oauth2_client {
         return $result;
     }
 
-}
-
-/**
- * @deprecated since 2.6, 2.5.3, 2.4.7
- */
-class boxclient {
-    public function __construct() {
-        throw new coding_exception(__CLASS__ . ' has been removed. Please update your code to use boxnet_client.',
-            DEBUG_DEVELOPER);
-    }
 }

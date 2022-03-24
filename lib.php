@@ -23,7 +23,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 require_once($CFG->dirroot . '/repository/lib.php');
-require_once($CFG->libdir . '/boxlib.php');
+require_once(__DIR__ . '/boxlib.php');
 
 /**
  * repository_boxnet class implements box.net client
@@ -70,7 +70,7 @@ class repository_boxnet extends repository {
         $returnurl->param('repo_id', $this->id);
         $returnurl->param('sesskey', sesskey());
 
-        $this->boxnetclient = new boxnet_client($clientid, $clientsecret, $returnurl, '');
+        $this->boxnetclient = new repository_boxnet_client($clientid, $clientsecret, $returnurl, '');
     }
 
     /**
